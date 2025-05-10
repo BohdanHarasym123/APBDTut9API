@@ -1,6 +1,12 @@
 @APBDTut9API_HostAddress = http://localhost:5103
 
-GET {{APBDTut9API_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{APBDTut9API_HostAddress}}/api/Warehouse
+Content-Type: application/json
 
+{
+    "IdProduct": 1,
+    "IdWarehouse": 1,
+    "Amount": 125,
+    "CreatedAt": "2025-05-11T18:25:43.511Z"
+}
 ###
