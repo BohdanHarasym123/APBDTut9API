@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APBDTut9API", "APBDTut9API\APBDTut9API.csproj", "{84FC02D8-2466-4710-AAC5-79E31B550DAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84FC02D8-2466-4710-AAC5-79E31B550DAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84FC02D8-2466-4710-AAC5-79E31B550DAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84FC02D8-2466-4710-AAC5-79E31B550DAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84FC02D8-2466-4710-AAC5-79E31B550DAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
