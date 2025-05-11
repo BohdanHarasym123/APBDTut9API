@@ -1,6 +1,6 @@
 @APBDTut9API_HostAddress = http://localhost:5103
 
-POST {{APBDTut9API_HostAddress}}/api/Warehouse
+POST {{APBDTut9API_HostAddress}}/api/Warehouse/procedure
 Content-Type: application/json
 
 {

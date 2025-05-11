@@ -76,4 +76,32 @@ public class ApiService : IApiService
         var id = (int) await insertRecord.ExecuteScalarAsync();
         return id!;
     }
+
+    public async Task<int> AddProductWarehouseProcedureAsync(DeliveryDTO delivery)
+    {
+        using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+        
+        if(delivery.IdProduct <= 0 || delivery.IdWarehouse <= 0) throw new Exception("Ids must be greater than zero");
+
+        var procedure = new SqlCommand("AddProductToWarehouse", connection);
+        procedure.CommandType = System.Data.CommandType.StoredProcedure;
+        
+        procedure.Parameters.AddWithValue("@IdProduct", delivery.IdProduct);
+        procedure.Parameters.AddWithValue("@IdWarehouse", delivery.IdWarehouse);
+        procedure.Parameters.AddWithValue("@Amount", delivery.Amount);
+        procedure.Parameters.AddWithValue("@CreatedAt", delivery.CreatedAt);
+
+        try
+        {
+            var id = await procedure.ExecuteScalarAsync();
+            if (id == null) throw new Exception("Procedure didn't return anything");
+            
+            return Convert.ToInt32(id);
+        }
+        catch (Exception e)
+        {
+            throw new Exception("Something went wrong inside the procedure: " + e.Message);
+        }
+    }
 }

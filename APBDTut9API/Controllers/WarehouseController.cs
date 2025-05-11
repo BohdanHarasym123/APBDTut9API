@@ -28,4 +28,18 @@ public class WarehouseController : ControllerBase
             return BadRequest(e.Message);
         }
     }
+
+    [HttpPost("procedure")]
+    public async Task<IActionResult> AddProductWarehouseProcedureAsync(DeliveryDTO delivery)
+    {
+        try
+        {
+            var id = await _service.AddProductWarehouseProcedureAsync(delivery);
+            return Created("", id);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
+    }
 }
